@@ -38,9 +38,9 @@
 			@php
 				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
 				if ($data->category->movie_meta && $data->tmdb != 0)
-					$poster = ( new \App\Services\Tmdb\Client\Movie($data->tmdb))->get_poster_small();
+					$poster = "{{ $data?->poster ? tmdb_image('poster_big', $data->poster) : 'https://via.placeholder.com/400x600' }}";
 				if ($data->category->tv_meta && $data->tmdb != 0){
-                                	$poster = ( new \App\Services\Tmdb\Client\TV($data->tmdb))->get_poster_small();}
+                                	$poster = "{{ $data?->poster ? tmdb_image('poster_big', $data->poster) : 'https://via.placeholder.com/400x600' }}";
 				if ($data->category->no_meta)
 					if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
 						$poster = url('files/img/torrent-cover_' . $data->id . '.jpg');
