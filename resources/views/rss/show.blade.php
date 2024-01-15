@@ -29,9 +29,7 @@
 	   	    <size>{{ $data->getSize() }}</size>
 		    <imdb>
 			@if (($data->category->movie_meta || $data->category->tv_meta) && $data->imdb != 0)
-				https://anon.to?http://www.imdb.com/title/tt{{ $data->imdb }}
-                        @else
-                        	{{ route('torrent', ['id' => $data->id ]) }}
+				https://anon.to?http://www.imdb.com/title/tt{{ $data->imdb }};                        
                         @endif
 		     </imdb>
                      <poster>
@@ -39,11 +37,12 @@
 				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
 				if ($data->category->movie_meta && $data->tmdb != 0)
 					$poster = tmdb_image('poster_small', $data->poster);
-				if ($data->category->tv_meta && $data->tmdb != 0){
-                                	$poster = tmdb_image('poster_small', $data->poster);
+				if ($data->category->tv_meta && $data->tmdb != 0) {
+                                	$poster = tmdb_image('poster_small', $data->poster); }
 				if ($data->category->no_meta)
 					if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
 						$poster = url('files/img/torrent-cover_' . $data->id . '.jpg');
+
 			@endphp
 			{{$poster}}
 		     </poster>
@@ -51,13 +50,11 @@
 				@if ($data->category->movie_meta && $data->tmdb != 0)
 					https://anon.to?https://www.themoviedb.org/movie/{{ $data->tmdb }}
                         	@elseif ($data->category->tv_meta && $data->tmdb != 0)
-					https://anon.to?https://www.themoviedb.org/tv/{{ $data->tmdb }}
-                        	@else
-                        		{{ route('torrent', ['id' => $data->id ]) }}
+					https://anon.to?https://www.themoviedb.org/tv/{{ $data->tmdb }}                        	
                         	@endif
 		    </tmdb>
-                    <link>{{ route('torrent', ['id' => $data->id ]) }}</link>
-                    <guid isPermaLink="true">{{ route('torrent', ['id' => $data->id ]) }}</guid>
+                    <link>{{ route('torrent.download.rsskey', ['id' => $data->id, 'rsskey' => $user->rsskey ]) }}</link>
+                    <guid>{{ $data->id }}</guid>
                     <description>
                     	{{$poster}} 
 		    	Categoria: {{ $data->category->name }}		    
@@ -70,7 +67,8 @@
 		     	@if ($data->category->movie_meta && $data->tmdb != 0)
 				[![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/movie/{{ $data->tmdb }})
                         @elseif ($data->category->tv_meta && $data->tmdb != 0)
-				[![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/tv/{{ $data->tmdb }}) @endif
+				[![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/tv/{{ $data->tmdb }}) 
+			@endif
 		   </description>
                     <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">
                         @if(!$data->anon && $data->user)
