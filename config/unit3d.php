@@ -21,7 +21,9 @@ return [
     |
     */
 
-    'powered-by' => 'Powered By Pruebas Community Edition v7.2.1',
+
+    'powered-by' => 'Powered By UNIT3D Community Edition v7.2.3',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -43,7 +45,7 @@ return [
     |
     */
 
-    'version' => 'v7.2.1',
+    'version' => 'v7.2.3',
 
     /*
     |--------------------------------------------------------------------------
