@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'title' => 'UNIT3D',
+    'title' => 'pruebas2024',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'subTitle' => 'Built On Laravel',
+    'subTitle' => 'Built On Laravel pruebas 2024',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +178,7 @@ return [
     | True/1 = Enabled
     | False/0 = Disabled
     */
-    'application_signups' => false,
+    'application_signups' => True,
 
     /*
     |--------------------------------------------------------------------------
