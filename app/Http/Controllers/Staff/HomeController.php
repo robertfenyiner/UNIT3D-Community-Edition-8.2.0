@@ -39,9 +39,9 @@ class HomeController extends Controller
         $validatingGroup = cache()->rememberForever('validating_group', fn () => Group::where('slug', '=', 'validating')->pluck('id'));
 
         // SSL Info
-        try {
-            $certificate = $request->secure() ? SslCertificate::createForHostName(config('app.url')) : '';
-        } catch (Exception) {
+        //try {
+            //$certificate = $request->secure() ? SslCertificate::createForHostName(config('app.url')) : '';
+        //} catch (Exception) {
             $certificate = '';
         }
 
