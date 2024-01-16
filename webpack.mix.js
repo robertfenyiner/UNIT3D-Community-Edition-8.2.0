@@ -46,7 +46,8 @@ mix.options({
      *
      * We compile each of these separately since they should only be loaded with the certain views
      */
-    .sass('resources/sass/main/login.scss', 'public/css/main/login.css')
+    // .sass('resources/sass/main/login.scss', 'public/css/main/login.css')
+    .sass('resources/sass/main/login.scss')
 
     /*
      * Here we take all these scripts and compile them into a single 'unit3d.js' file that will be loaded after 'app.js'
