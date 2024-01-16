@@ -33,8 +33,8 @@
                 <a class="auth-form__branding" href="{{ route('home.index') }}">
                     <i class="fal fa-tv-retro"></i>
                     <span class="auth-form__site-logo">
-                        {{-- <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" --}}
-                        alt="{{ config('other.title') }}" />
+                        <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}"
+                            alt="{{ config('other.title') }}" widh="100%" height="100%" />
                     </span>
                     {{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
                 </a>
