@@ -27,11 +27,11 @@
     <div class="Jackett" style="display: none">{{ config('unit3d.powered-by') }}</div>
     <!-- Do NOT Change! For Jackett Support -->
     <main>
+        <div class="logo-div">
+            <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
+                <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
+        </div>
         <section class="auth-form">
-            <div class="logo-div">
-                <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
-                    <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
-            </div>
             <form class="auth-form__form" method="POST" action="{{ route('login') }}">
                 @csrf
                 {{-- <a class="auth-form__branding" href="{{ route('home.index') }}"> LC --}}
