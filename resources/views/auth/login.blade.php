@@ -28,16 +28,20 @@
     <!-- Do NOT Change! For Jackett Support -->
     <main>
         <section class="auth-form">
+            <div class="logo-div">
+                <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
+                    <img src="{{ url('/img/logo.png') }}">
+            </div>
             <form class="auth-form__form" method="POST" action="{{ route('login') }}">
                 @csrf
-                <a class="auth-form__branding" href="{{ route('home.index') }}">
-                    {{-- <i class="fal fa-tv-retro"></i> --}}
-                    {{-- <span class="auth-form__site-logo"> --}}
-                    <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}"
-                        alt="{{ config('other.title') }}" width="100%" height="100%" />
-                    {{-- </span> --}}
-                    {{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
-                </a>
+                {{-- <a class="auth-form__branding" href="{{ route('home.index') }}"> LC --}}
+                {{-- <i class="fal fa-tv-retro"></i> --}}
+                {{-- <span class="auth-form__site-logo"> --}}
+                {{-- <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" LC --}}
+                {{-- alt="{{ config('other.title') }}"/> LC --}}
+                {{-- </span> --}}
+                {{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
+                {{-- </a> LC --}}
                 @if (Session::has('warning') || Session::has('success') || Session::has('info'))
                     <ul class="auth-form__important-infos">
                         @if (Session::has('warning'))
