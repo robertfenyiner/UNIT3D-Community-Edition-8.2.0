@@ -1,13 +1,20 @@
+// COLOR PALLETTE
+// Black: #000000
+// Marian blue: #253B91
+// Red: #E82027
+// Dun: #D5BEA7
+// White: #FDFDFD
+
 body {
     height: 100vh;
     overflow-y: auto;
-    background-color: #181529;
+    background-color: #FDFDFD;
     // background-image: url(/img/pipes/silver.png);
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 .auth-form {
-    background-image: linear-gradient(45deg,#8177BB, #756AB4);
+    // background-image: linear-gradient(45deg,#8177BB, #756AB4);
     opacity: 0.75;
     width: min(100vw - 20px, 400px);
     margin: 60px auto;
