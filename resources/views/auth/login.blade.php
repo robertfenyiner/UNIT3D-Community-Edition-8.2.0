@@ -27,7 +27,7 @@
     <div class="Jackett" style="display: none">{{ config('unit3d.powered-by') }}</div>
     <!-- Do NOT Change! For Jackett Support -->
     <main>
-        <div class="logo-div">
+        <div class="logo-la">
             <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
                 <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
             </a>
@@ -112,13 +112,13 @@
                 <a class="auth-form__footer-item" href="{{ route('password.request') }}">
                     {{ __('auth.lost-password') }}
                 </a>
-                <div class="discord-div">
-                    <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
-                        <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
-                    </a>
-                </div>
             </footer>
         </section>
+        <div class="discord-div">
+            <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
+                <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
+            </a>
+        </div>
     </main>
 </body>
 
