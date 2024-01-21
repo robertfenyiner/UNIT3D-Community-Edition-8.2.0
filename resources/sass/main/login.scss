@@ -8,13 +8,11 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
-    background: rgb(37,59,145);
-    background: linear-gradient(170deg, rgba(37,59,145,1) 56%, rgba(0,0,0,1) 100%); 
-    // background-color: var(--MarianBlue);
-    // background-image: url(/img/pipes/silver.png);
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    // background: rgb(37,59,145);
+    background: linear-gradient(170deg, rgba(37,59,145,1) 56%, rgba(0,0,0,1) 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 // <------- MAIN CONTAINER -------->

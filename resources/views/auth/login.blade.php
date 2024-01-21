@@ -27,7 +27,7 @@
     <div class="Jackett" style="display: none">{{ config('unit3d.powered-by') }}</div>
     <!-- Do NOT Change! For Jackett Support -->
     <main>
-        <div class="logo-la">
+        {{-- <div class="logo-la">
             <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
                 <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
             </a>
@@ -35,14 +35,6 @@
         <section class="auth-form">
             <form class="auth-form__form" method="POST" action="{{ route('login') }}">
                 @csrf
-                {{-- <a class="auth-form__branding" href="{{ route('home.index') }}"> LC --}}
-                {{-- <i class="fal fa-tv-retro"></i> --}}
-                {{-- <span class="auth-form__site-logo"> --}}
-                {{-- <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" LC --}}
-                {{-- alt="{{ config('other.title') }}"/> LC --}}
-                {{-- </span> --}}
-                {{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
-                {{-- </a> LC --}}
                 @if (Session::has('warning') || Session::has('success') || Session::has('info'))
                     <ul class="auth-form__important-infos">
                         @if (Session::has('warning'))
@@ -118,8 +110,17 @@
             <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
                 <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
             </a>
-        </div>
+        </div> --}}
     </main>
 </body>
 
 </html>
+
+{{-- <a class="auth-form__branding" href="{{ route('home.index') }}"> LC --}}
+{{-- <i class="fal fa-tv-retro"></i> --}}
+{{-- <span class="auth-form__site-logo"> --}}
+{{-- <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" LC --}}
+{{-- alt="{{ config('other.title') }}"/> LC --}}
+{{-- </span> --}}
+{{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
+{{-- </a> LC --}}
