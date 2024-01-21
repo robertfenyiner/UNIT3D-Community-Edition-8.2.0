@@ -30,6 +30,7 @@
         <div class="logo-div">
             <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
                 <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
+            </a>
         </div>
         <section class="auth-form">
             <form class="auth-form__form" method="POST" action="{{ route('login') }}">
