@@ -13,13 +13,16 @@ body {
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+// <------- MAIN CONTAINER -------->
 .auth-form {
     // background-image: linear-gradient(45deg,#8177BB, #756AB4);
+    background-color: #FDFDFD;
     opacity: 0.75;
-    width: min(100vw - 20px, 400px);
     margin: 60px auto;
     border-radius: 22px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    width: 50vw;
+    // width: min(100vw - 20px, 400px);
 }
 
 .auth-form__form {
@@ -218,6 +221,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
     color: #11001C;
 }
 
+
+// <------ Logo Container ------>
 .auth-form__branding {
     text-decoration: none;
     color: #9682de;
@@ -240,8 +245,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
 }
 
 .auth-form__site-logo-lateam {
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    // height: 100%;
 }
 
 .auth-form__errors {
