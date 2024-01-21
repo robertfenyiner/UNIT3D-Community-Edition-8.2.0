@@ -30,7 +30,7 @@
         <section class="auth-form">
             <div class="logo-div">
                 <a class="logo-widget" href="{{ route('home.index') }}" title="Home">
-                    <img src="{{ url('/img/logo.png') }}">
+                    <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}">
             </div>
             <form class="auth-form__form" method="POST" action="{{ route('login') }}">
                 @csrf
