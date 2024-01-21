@@ -18,7 +18,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
 // <------- MAIN CONTAINER -------->
 .auth-form {
     // background-image: linear-gradient(45deg,#8177BB, #756AB4);
-    background-color: var(--White);
+    background-color: var(--Dun);
     // opacity: 0.75;
     margin: 60px auto;
     border-radius: 22px;
@@ -56,8 +56,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
     width: 100%;
 
     &:hover {
-        background-color: #8E85C1;
-        color: #000;
+        background-color: var(--MarianBlue);
+        color: var(--White);
     }
 
     &:first-child {
@@ -95,8 +95,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
     }
 
     &:hover {
-        background-color: #8E85C1;
-        color: #000;
+        background-color: var(--MarianBlue);
+        color: var(--White);
     }
 }
 
@@ -165,7 +165,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A
     margin: 3px 0;
     border: none;
     box-sizing: border-box;
-    background-color: #D5BEA7;
+    background-color: var(--White);
     outline: none;
     transition: outline-color 0.5s;
     font-weight: 400;
