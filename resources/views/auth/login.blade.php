@@ -102,18 +102,13 @@
                 @elseif (config('other.application_signups'))
                     <a class="auth-form__footer-item" href="{{ route('application.create') }}">
                         {{ __('auth.apply') }}
-                    </a>
-
-
-                        <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
-                        <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">	
-
-
-                
+                    </a>              
                 @endif
                 <a class="auth-form__footer-item" href="{{ route('password.request') }}">
                     {{ __('auth.lost-password') }}
                 </a>
+                        <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
+                        <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">	
             </footer>
         </section>
     </main>
