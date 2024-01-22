@@ -102,6 +102,7 @@ class RssController extends Controller
             'alive',
             'dying',
             'dead',
+            'poster',
         ]);
 
         if ($v->passes()) {
