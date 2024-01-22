@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'title' => 'pruebas2024',
+    'title' => 'Lat-Team',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'subTitle' => 'Built On Laravel pruebas 2024',
+    'subTitle' => 'Poder Latino',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'meta_description' => 'Built On Laravel',
+    'meta_description' => 'Poder Latino',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     | Date Site Was Born
     |
     */
-    'birthdate' => 'December 30th 2017',
+    'birthdate' => 'January 20th 2020',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'ratio' => 0.4,
+    'ratio' => 0.25,
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return [
     'invite-only'   => true,
     'invite_expire' => '14',
 
-    'invites_restriced' => false,
+    'invites_restriced' => true,
     'invite_groups'     => [
         'Administrator',
         'Owner',
@@ -178,7 +178,7 @@ return [
     | True/1 = Enabled
     | False/0 = Disabled
     */
-    'application_signups' => True,
+    'application_signups' => false,
 
     /*
     |--------------------------------------------------------------------------

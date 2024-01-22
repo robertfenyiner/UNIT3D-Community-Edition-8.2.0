@@ -22,7 +22,7 @@ return [
     */
 
 
-    'powered-by' => 'Powered By UNIT3D Community Edition v7.2.3',
+    'powered-by' => 'Powered By Lat-Team - Poder Latino',
 
 
     /*
