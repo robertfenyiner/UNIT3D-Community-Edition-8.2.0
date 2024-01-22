@@ -20,6 +20,17 @@
         <ttl>5</ttl>
         @if($torrents)
             @foreach($torrents as $data)
+            	@php
+                        $meta = match (true) {
+                            $data>category->tv_meta => App\Models\Tv::query()
+                                ->with('genres', 'networks', 'seasons')
+                                ->find($feature->torrent->tmdb ?? 0),
+                            $data->category->movie_meta => App\Models\Movie::query()
+                                ->with('genres', 'companies', 'collection')
+                                ->find($feature->torrent->tmdb ?? 0),                            
+                            default => null,
+                        };
+                 @endphp
                 <item>
                     <title>{{ $data->name }}</title>
                     <post>{{ $meta->poster }}</post>
