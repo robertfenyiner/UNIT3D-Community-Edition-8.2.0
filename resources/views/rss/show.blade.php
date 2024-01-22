@@ -22,7 +22,7 @@
             @foreach($torrents as $data)
                 <item>
                     <title>{{ $data->name }}</title>
-                    <post>{{ $data->poster }}</post>
+                    <post>{{ $meta->poster }}</post>
                     <category>{{ $data->category->name }}</category>
                     <type>{{ $data->type->name }}</type>
 		    <resolution>{{ $data->resolution->name ?? 'No Res' }}</resolution>
@@ -36,9 +36,9 @@
 			@php
 				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
 				if ($data->category->movie_meta && $data->tmdb != 0)
-					$poster = tmdb_image('poster_small', $data->poster);
+					$poster = tmdb_image('poster_small', $meta>poster);
 				if ($data->category->tv_meta && $data->tmdb != 0) 
-                                	$poster = tmdb_image('poster_small', $data->poster); 
+                                	$poster = tmdb_image('poster_small', $meta->poster); 
 				if ($data->category->no_meta)
 					if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
 						$poster = url('files/img/torrent-cover_' . $data->id . '.jpg');

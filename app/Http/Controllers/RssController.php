@@ -21,8 +21,11 @@ use App\Models\Rss;
 use App\Models\Torrent;
 use App\Models\Type;
 use App\Models\User;
+use App\Models\Tv;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 use Exception;
+
 
 /**
  * @see \Tests\Todo\Feature\Http\Controllers\RssControllerTest
@@ -102,7 +105,6 @@ class RssController extends Controller
             'alive',
             'dying',
             'dead',
-            'poster',
         ]);
 
         if ($v->passes()) {
@@ -200,9 +202,31 @@ class RssController extends Controller
             ->orderByDesc('bumped_at')
             ->take(50)
             ->get());
+        
+        if ($torrent->category->tv_meta && $torrent->tmdb) {
+            $meta = Tv::with([
+                'genres',
+                'credits' => ['person', 'occupation'],
+                'companies',
+                'networks',
+                'recommendedTv:id,name,poster,first_air_date'
+            ])->find($torrent->tmdb);
+        }
+
+        if ($torrent->category->movie_meta && $torrent->tmdb) {
+            $meta = Movie::with([
+                'genres',
+                'credits' => ['person', 'occupation'],
+                'companies',
+                'collection',
+                'recommendedMovies:id,title,poster,release_date'
+            ])
+                ->find($torrent->tmdb);
+        }
 
         return response()->view('rss.show', [
             'torrents' => $torrents,
+            'meta'     => $meta,
             'user'     => $user,
             'rss'      => $rss,
         ])
