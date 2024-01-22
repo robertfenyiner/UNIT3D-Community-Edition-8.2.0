@@ -24,7 +24,7 @@
             @foreach($torrents as $data)
             	@php
                         $meta = match (true) {
-                            $data>category->tv_meta => App\Models\Tv::query()
+                            $data->category->tv_meta => App\Models\Tv::query()
                                 ->with('genres', 'networks', 'seasons')
                                 ->find($feature->torrent->tmdb ?? 0),
                             $data->category->movie_meta => App\Models\Movie::query()
