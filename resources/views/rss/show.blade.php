@@ -26,10 +26,10 @@
                         $meta = match (true) {
                             $data->category->tv_meta => App\Models\Tv::query()
                                 ->with('genres', 'networks', 'seasons')
-                                ->find($feature->torrent->tmdb ?? 0),
+                                ->find($data->tmdb ?? 0),
                             $data->category->movie_meta => App\Models\Movie::query()
                                 ->with('genres', 'companies', 'collection')
-                                ->find($feature->torrent->tmdb ?? 0),                            
+                                ->find($data->tmdb ?? 0),                            
                             default => null,
                         };
                  @endphp
