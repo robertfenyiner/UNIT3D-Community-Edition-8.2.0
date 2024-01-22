@@ -1,5 +1,7 @@
 @php
     echo '<?xml version="1.0" encoding="UTF-8" ?>';
+    use App\Models\Movie;
+    use App\Models\Tv;
     $poster='';
 @endphp
 <rss version="2.0"
