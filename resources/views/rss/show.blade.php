@@ -34,8 +34,7 @@
                         };
                  @endphp
                 <item>
-                    <title>{{ $data->name }}</title>
-                    <post>{{ $meta->poster }}</post>
+                    <title>{{ $data->name }}</title>                    
                     <category>{{ $data->category->name }}</category>
                     <type>{{ $data->type->name }}</type>
 		    <resolution>{{ $data->resolution->name ?? 'No Res' }}</resolution>
@@ -49,7 +48,7 @@
 			@php
 				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
 				if ($data->category->movie_meta && $data->tmdb != 0)
-					$poster = tmdb_image('poster_small', $meta>poster);
+					$poster = tmdb_image('poster_small', $meta->poster);
 				if ($data->category->tv_meta && $data->tmdb != 0) 
                                 	$poster = tmdb_image('poster_small', $meta->poster); 
 				if ($data->category->no_meta)
