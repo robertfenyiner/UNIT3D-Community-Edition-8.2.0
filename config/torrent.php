@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'source' => 'UNIT3D',
+    'source' => 'Lat-Team "Poder Latino"',
 
     /*
     |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ return [
     |
     */
 
-    'created_by'        => 'Edited by UNIT3D',
+    'created_by'        => 'Edited by Lat-Team "Poder Latino"',
     'created_by_append' => true,
 
     /*
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'comment' => 'This torrent was downloaded from UNIT3D',
+    'comment' => 'Lat-Team "Poder Latino"',
 
     /*
     |--------------------------------------------------------------------------
