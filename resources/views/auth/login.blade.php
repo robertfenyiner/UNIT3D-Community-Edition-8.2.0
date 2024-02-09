@@ -31,7 +31,7 @@
             <form class="auth-form__form">
                 @csrf
                 <a class="auth-form__branding">
-                    <img class="auth-form__site-logo-lateam" src="./public/img/logo.png" alt="LaTeam" />
+                    <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam" />
                 </a>
                 @if (Session::has('warning') || Session::has('success') || Session::has('info'))
                 <ul class="auth-form__important-infos">
