@@ -28,81 +28,78 @@
     <!-- Do NOT Change! For Jackett Support -->
     <main>
         <section class="auth-form">
-            <form class="auth-form__form" method="POST" action="{{ route('login') }}">
+            <form class="auth-form__form">
                 @csrf
-                <a class="auth-form__branding" href="{{ route('home.index') }}">
-                    {{-- <i class="fal fa-tv-retro"></i> --}}
-                    {{-- <span class="auth-form__site-logo"> --}}
-                    <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}"
-                        alt="{{ config('other.title') }}" width="100%" height="100%" />
-                    {{-- </span> --}}
-                    {{-- <span class="auth-form__site-logo">{{ \config('other.title') }}</span> --}}
+                <a class="auth-form__branding">
+                    <img class="auth-form__site-logo-lateam" src="./public/logo.png" alt="LaTeam" />
                 </a>
                 @if (Session::has('warning') || Session::has('success') || Session::has('info'))
-                    <ul class="auth-form__important-infos">
-                        @if (Session::has('warning'))
-                            <li class="auth-form__important-info">
-                                Warning: {{ Session::get('warning') }}
-                            </li>
-                        @endif
+                <ul class="auth-form__important-infos">
+                    @if (Session::has('warning'))
+                    <li class="auth-form__important-info">
+                        Warning: {{ Session::get('warning') }}
+                    </li>
+                    @endif
 
-                        @if (Session::has('info'))
-                            <li class="auth-form__important-info">
-                                Info: {{ Session::get('info') }}
-                            </li>
-                        @endif
+                    @if (Session::has('info'))
+                    <li class="auth-form__important-info">
+                        Info: {{ Session::get('info') }}
+                    </li>
+                    @endif
 
-                        @if (Session::has('success'))
-                            <li class="auth-form__important-info">
-                                Success: {{ Session::get('success') }}
-                            </li>
-                        @endif
-                    </ul>
+                    @if (Session::has('success'))
+                    <li class="auth-form__important-info">
+                        Success: {{ Session::get('success') }}
+                    </li>
+                    @endif
+                </ul>
                 @endif
 
                 <p class="auth-form__text-input-group">
                     <label class="auth-form__label" for="username">
                         {{ __('auth.username') }}
                     </label>
-                    <input id="username" class="auth-form__text-input" autocomplete="username" autofocus
-                        name="username" required type="text" value="{{ old('username') }}" />
+                    <input id="username" class="auth-form__text-input" autocomplete="username" autofocus name="username"
+                        required type="text" placeholder="Username" value="{{ old('username') }}" />
                 </p>
                 <p class="auth-form__text-input-group">
                     <label class="auth-form__label" for="password">
                         {{ __('auth.password') }}
                     </label>
-                    <input id="password" class="auth-form__text-input" autocomplete="current-password" name="password"
-                        required type="password" />
+                    <input id="password" class="auth-form__text-input" placeholder="Password"
+                        autocomplete="current-password" name="password" required type="password" />
                 </p>
                 <p class="auth-form__checkbox-input-group">
-                    <input id="remember" class="auth-form__checkbox-input" name="remember"
-                        {{ old('remember') ? 'checked' : '' }} type="checkbox" />
+                    <input id="remember" class="auth-form__checkbox-input" name="remember" {{ old('remember')
+                        ? 'checked' : '' }} type="checkbox" />
                     <label class="auth-form__label" for="remember">
                         {{ __('auth.remember-me') }}
                     </label>
                 </p>
                 @if (config('captcha.enabled'))
-                    @hiddencaptcha
+                @hiddencaptcha
                 @endif
 
-                <button class="auth-form__primary-button">{{ __('auth.login') }}</button>
-                @if (Session::has('errors'))
-                    <ul class="auth-form__errors">
-                        @foreach ($errors->all() as $error)
+                <div class="auth-form__button-container">
+                    <button class="auth-form__primary-button">LOGIN</button>
+                    @if (Session::has('errors'))
+                        <ul class="auth-form__errors">
+                            @foreach ($errors->all() as $error)
                             <li class="auth-form__error">{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                            @endforeach
+                        </ul>
+                        @endif
+                </div>
             </form>
             <footer class="auth-form__footer">
                 @if (!config('other.invite-only'))
-                    <a class="auth-form__footer-item" href="{{ route('register') }}">
-                        {{ __('auth.signup') }}
-                    </a>
+                <a class="auth-form__footer-item" href="{{ route('register') }}">
+                    {{ __('auth.signup') }}
+                </a>
                 @elseif (config('other.application_signups'))
-                    <a class="auth-form__footer-item" href="{{ route('application.create') }}">
-                        {{ __('auth.apply') }}
-                    </a>
+                <a class="auth-form__footer-item" href="{{ route('application.create') }}">
+                    {{ __('auth.apply') }}
+                </a>
                 @endif
                 <a class="auth-form__footer-item" href="{{ route('password.request') }}">
                     {{ __('auth.lost-password') }}

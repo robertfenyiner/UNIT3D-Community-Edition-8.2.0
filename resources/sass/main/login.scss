@@ -1,5 +1,5 @@
-// COLOR PALLETTE
-:root{
+/* COLOR PALLETTE */
+:root {
     --Black: #000000;
     --MarianBlue: #253B91;
     --Red: #E82027;
@@ -10,21 +10,13 @@
 body {
     min-height: 100vh;
     overflow-y: auto;
-    // background: rgb(37,59,145);
-    background: linear-gradient(170deg, rgba(37,59,145,1) 56%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(213, 190, 167, 1) 24%, rgba(255, 255, 255, 1) 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-// <------- MAIN CONTAINER -------->
 .auth-form {
-    // background-image: linear-gradient(45deg,#8177BB, #756AB4);
-    background-color: var(--Dun);
-    // opacity: 0.75;
-    margin: 60px auto;
-    border-radius: 22px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 50px auto;
     width: 50vw;
-    // width: min(100vw - 20px, 400px);
 }
 
 .auth-form__form {
@@ -72,37 +64,27 @@ body {
 .auth-form__footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .auth-form__footer-item {
-    padding: 28px 12px;
+    margin-top: 5px;
     text-decoration: none;
-    text-align: center;
-    line-height: 1;
     font-size: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1ch;
     transition: background-color 0.25s;
-    color: #11001C;
+    color: var(--Black);
     background-color: transparent;
-    border: none;
     cursor: pointer;
 
-    &:last-child {
-        border-bottom-left-radius: 22px;
-        border-bottom-right-radius: 22px;
-    }
-
     &:hover {
-        background-color: var(--MarianBlue);
-        color: var(--White);
+        font-weight: bold;
+        color: var(--Red);
     }
 }
 
 .auth-form__button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .auth-form__primary-button {
@@ -110,7 +92,7 @@ body {
     border-radius: 24px;
     background-color: var(--MarianBlue);
     border: none;
-    width: 100%;
+    width: 25%;
     color: var(--White);
     font-weight: 800;
     font-size: 16px;
@@ -128,7 +110,7 @@ body {
     padding: 14px 22px;
     border-radius: 9999px;
     border: none;
-    color: #11001C;
+    color: var(--Red);
     font-weight: 800;
     font-size: 16px;
     text-transform: uppercase;
@@ -144,23 +126,25 @@ body {
 .auth-form__label {
     margin-left: 14px;
     font-size: 16px;
-    color: #11001C;
+    color: var(--Black);
     font-weight: bold;
-    width: 100%;
+    font-size: 25px;
 }
 
 .auth-form__text-input-group,
 .auth-form__select-group,
-.auth-form__textarea-group{
+.auth-form__textarea-group {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0;
 }
 
 .auth-form__text-input,
-.auth-form__select{
+.auth-form__select {
     border-radius: 19px;
     height: 38px;
+    width: 40%;
     padding: 6px 15px;
     margin: 3px 0;
     border: none;
@@ -170,6 +154,7 @@ body {
     transition: outline-color 0.5s;
     font-weight: 400;
     color: #11001C;
+    background: var(--White);
 }
 
 .auth-form__text-input:focus,
@@ -180,14 +165,19 @@ body {
 
 .auth-form__checkbox-input-group {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .auth-form__checkbox-input {
+    cursor: pointer;
     margin-left: 12px;
     margin-right: 2px;
 }
 
-.auth-form__checkbox-input + .auth-form__label {
+.auth-form__checkbox-input+.auth-form__label {
+    cursor: pointer;
     margin-left: 0;
 }
 
@@ -224,7 +214,6 @@ body {
 }
 
 
-// <------ Logo Container ------>
 .auth-form__branding {
     text-decoration: none;
     color: #9682de;
@@ -248,7 +237,7 @@ body {
 
 .auth-form__site-logo-lateam {
     width: 30%;
-    // height: 100%;
+    margin-bottom: 50px;
 }
 
 .auth-form__errors {
@@ -266,27 +255,18 @@ body {
     gap: 16px;
 }
 
-.auth-form__error, .auth-form__important-info {
+.auth-form__error,
+.auth-form__important-info {
     color: #22183A;
     font-weight: bold;
     font-size: 16px;
 }
 
-.discord-div{
+.discord-div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
+    margin-top: 45px;
 }
-
-.discord-widget{
-    // align-self: center;
-}
-
-
 
 [x-cloak] {
     display: none !important;
