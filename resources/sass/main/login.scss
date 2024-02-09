@@ -279,3 +279,24 @@ body {
 [x-cloak] {
     display: none !important;
 }
+
+@media only screen and (max-width: 40em) {
+    .auth-form__site-logo-lateam {
+        width: 120%;
+        margin-bottom: 0px;
+    }
+
+    .auth-form__text-input,
+    .auth-form__select {
+        width: 150%;
+    }
+
+    .auth-form__label {
+        font-size: 12px;
+    }
+
+    .auth-form__primary-button {
+        height: 40px;
+        width: 75%;
+    }
+}
