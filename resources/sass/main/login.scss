@@ -17,6 +17,10 @@ body {
 .auth-form {
     margin: 50px auto;
     width: 50vw;
+
+    @media only screen and (min-width: 40em) {
+        width: 40vw;    
+    }
 }
 
 .auth-form__form {
@@ -125,9 +129,9 @@ body {
 
 .auth-form__label {
     margin-left: 14px;
-    font-size: 14px;
+    font-size: 10px;
     color: var(--Black);
-    font-weight: regular;
+    // font-weight: regular;
     font-size: 25px;
 }
 
@@ -238,6 +242,10 @@ body {
 .auth-form__site-logo-lateam {
     width: 30%;
     margin-bottom: 50px;
+
+    @media only screen and (min-width: 40em) {
+        width: 50%;     
+    }
 }
 
 .auth-form__errors {
