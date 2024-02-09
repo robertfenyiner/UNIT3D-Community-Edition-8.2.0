@@ -28,9 +28,9 @@
     <!-- Do NOT Change! For Jackett Support -->
     <main>
         <section class="auth-form">
-            <form class="auth-form__form">
+            <form class="auth-form__form" method="POST" action="{{ route('login') }}">
                 @csrf
-                <a class="auth-form__branding">
+                <a class="auth-form__branding" href="{{ route('home.index') }}">
                     <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam" />
                 </a>
                 @if (Session::has('warning') || Session::has('success') || Session::has('info'))
