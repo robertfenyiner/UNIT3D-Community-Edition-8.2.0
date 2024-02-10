@@ -24,6 +24,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Exception;
 
+
 /**
  * @see \Tests\Todo\Feature\Http\Controllers\RssControllerTest
  */
@@ -199,6 +200,8 @@ class RssController extends Controller
             ->orderByDesc('bumped_at')
             ->take(50)
             ->get());
+        
+        
 
         return response()->view('rss.show', [
             'torrents' => $torrents,
