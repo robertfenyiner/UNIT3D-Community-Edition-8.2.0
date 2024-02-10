@@ -158,8 +158,9 @@ return [
     | 10 = Nord
     | 11 = Revel
     | 12 = Material Design v3 Light
+    | 13 = Material Design v3 Dark
     */
-    'default_style' => 12,
+    'default_style' => 13,
 
     /*
     |--------------------------------------------------------------------------
