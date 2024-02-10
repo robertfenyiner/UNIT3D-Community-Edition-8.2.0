@@ -1,8 +1,7 @@
-<!--<<chatbox-->
-    <!--<:user="{{ App\Models\User::with(['chatStatus', 'chatroom', 'group'])->find(auth()->id()) }}"-->
-<!--<></chatbox>-->
+<!--<chatbox :user="{{ App\Models\User::with(['chatStatus', 'chatroom', 'group'])->find(auth()->id()) }}"></chatbox>-->
 
-
+<div id="vue">
+<script src="/js/chat.js?id=13167f8bcd432f6181864fc0432eb3ec" crossorigin="anonymous"></script>
 <div class="col-md-10 col-sm-10 col-md-offset-1">
     <div class="panel panel-chat">
         <div class="panel-heading">
