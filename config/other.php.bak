@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'title' => 'Lat-Team',
+    'title' => 'UNIT3D',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'subTitle' => 'Poder Latino',
+    'subTitle' => 'Built On Laravel',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'meta_description' => 'Poder Latino',
+    'meta_description' => 'Built On Laravel',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     | Date Site Was Born
     |
     */
-    'birthdate' => 'January 20th 2020',
+    'birthdate' => 'December 30th 2017',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'ratio' => 0.25,
+    'ratio' => 0.4,
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return [
     'invite-only'   => true,
     'invite_expire' => '14',
 
-    'invites_restriced' => true,
+    'invites_restriced' => false,
     'invite_groups'     => [
         'Administrator',
         'Owner',

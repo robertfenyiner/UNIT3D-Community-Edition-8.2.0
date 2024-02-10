@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'subject' => 'Bienvenido a Lat-Team',
+    'subject' => 'Welcome to UNIT3D',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'message' => 'Bienvenido a [b]Lat-Team[/b].
+    'message' => 'Welcome To [b]UNIT3D[/b].
 
-    - Lat-Team :space_invader:',
+    - UNIT3D :space_invader:',
 ];
