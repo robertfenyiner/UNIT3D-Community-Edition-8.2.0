@@ -110,7 +110,6 @@ return [
     'allowed' => [
         'en',
         'es',
-
     ],
 
     /*
