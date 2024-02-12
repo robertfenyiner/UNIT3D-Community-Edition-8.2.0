@@ -1,7 +1,5 @@
 @php
     echo '<?xml version="1.0" encoding="UTF-8" ?>';
-    use App\Models\Movie;
-    use App\Models\Tv;
     $poster='';
 @endphp
 <rss version="2.0"
@@ -48,9 +46,9 @@
 			@php
 				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
 				if ($data->category->movie_meta && $data->tmdb != 0)
-					$poster = tmdb_image('poster_small', $meta->poster);
+					$poster = tmdb_image('poster_big', $meta->poster);
 				if ($data->category->tv_meta && $data->tmdb != 0) 
-                                	$poster = tmdb_image('poster_small', $meta->poster); 
+                                	$poster = tmdb_image('poster_big', $meta->poster); 
 				if ($data->category->no_meta)
 					if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
 						$poster = url('files/img/torrent-cover_' . $data->id . '.jpg');
@@ -65,7 +63,7 @@
 					https://anon.to?https://www.themoviedb.org/tv/{{ $data->tmdb }}                        	
                         	@endif
 		    </tmdb>
-                    <link>{{ route('torrent.download.rsskey', ['id' => $data->id, 'rsskey' => $user->rsskey ]) }}</link>
+		    <link>{{ route('torrents.show', ['id' => $data->id ]) }}</link>                    
                     <guid>{{ $data->id }}</guid>
                     <description>
                     	{{$poster}} 
