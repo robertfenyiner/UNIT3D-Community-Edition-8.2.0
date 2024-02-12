@@ -523,9 +523,10 @@ return [
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src
         'frame-src' => [
             'allow' => [
-                'https://e.widgetbot.io/'    
+                'https://e.widgetbot.io/'
             ],
         ],
+
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/img-src
         'img-src' => [
             'self' => true,
