@@ -21,3 +21,9 @@
 </div>
 
 <script src="//cdn.jsdelivr.net/npm/@widgetbot/html-embed" nonce="{{ HDVinnie\SecureHeaders\SecureHeaders::nonce('script') }}"></script>
+<script src="//cdn.jsdelivr.net/npm/@widgetbot/crate@3" nonce="{{ HDVinnie\SecureHeaders\SecureHeaders::nonce('script') }}>
+                new Crate({
+                        server: '838217297478680596',
+                        channel: '838217297478680599'
+                        })
+        </script>
