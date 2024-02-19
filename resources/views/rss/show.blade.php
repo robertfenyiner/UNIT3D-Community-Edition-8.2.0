@@ -88,6 +88,12 @@
                         @endif
                     </dc:creator>
                     <pubDate>{{ $data->created_at->toRssString() }}</pubDate>
+                    <enclosure
+                            url="{{ route('torrent.download.rsskey', ['id' => $data->id, 'rsskey' => $user->rsskey ]) }}"
+                            type="application/x-bittorrent"
+                            length="39399"
+                    />
+                </item>
                 </item>
             @endforeach
         @endif
