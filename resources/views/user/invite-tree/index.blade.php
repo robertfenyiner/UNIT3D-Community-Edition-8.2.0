@@ -117,7 +117,7 @@
                                         try {
                                             echo $invite->receiver->last_action->diffForHumans();
                                         } catch (\Exception $e) {
-                                            echo 'Error al calcular la diferencia de tiempo.';
+                                            echo 'N/A';
                                         }
                                         </time>
                                     @endif
