@@ -27,7 +27,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'UNIT3D',
+    'name' => 'LAT-TEAM "PODER LATINO"',
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +131,7 @@ return [
     |
     */
 
-    'meta_locale' => 'en_US',
+    'meta_locale' => 'es_MX',
 
     /*
     |--------------------------------------------------------------------------

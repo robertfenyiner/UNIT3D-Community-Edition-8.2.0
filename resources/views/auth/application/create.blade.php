@@ -29,7 +29,8 @@
                     @csrf
                     <a class="auth-form__branding" href="{{ route('home.index') }}">
                         <i class="fal fa-tv-retro"></i>
-                        <span class="auth-form__site-logo">{{ \config('other.title') }}</span>
+                        <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam" />
+                        <!--<span class="auth-form__site-logo">{{ \config('other.title') }}</span>-->
                     </a>
                     @if (config('other.application_signups'))
                         <ul class="auth-form__important-infos">
@@ -156,7 +157,13 @@
                             @hiddencaptcha
                         @endif
 
-                        <button class="auth-form__primary-button">{{ __('auth.apply') }}</button>
+                        
+
+                        <!--<button class="auth-form__primary-button">{{ __('auth.apply') }}</button>-->
+
+
+                        <div class="auth-form__button-container">
+                        <button class="auth-form__primary-button">APLICAR</button>
                         @if (Session::has('errors'))
                             <ul class="auth-form__errors">
                                 @foreach ($errors->all() as $error)
@@ -164,6 +171,8 @@
                                 @endforeach
                             </ul>
                         @endif
+                        </div>
+
                     @else
                         <ul class="auth-form__important-infos">
                             <li class="auth-form__important-info">{{ __('auth.appl-closed') }}</li>
@@ -171,6 +180,11 @@
                         </ul>
                     @endif
                 </form>
+                <div class="discord-div">
+                <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
+                <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
+                </a>
+                </div>
             </section>
         </main>
         @vite('resources/js/app.js')

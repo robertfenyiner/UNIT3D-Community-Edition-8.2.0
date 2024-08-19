@@ -17,6 +17,6 @@
     @livewire('top-torrents')
     @livewire('top-users')
     @include('blocks.latest_topics')
-    @include('blocks.latest_posts')
+    {{--@include('blocks.latest_posts')--}}
     @include('blocks.online')
 @endsection
