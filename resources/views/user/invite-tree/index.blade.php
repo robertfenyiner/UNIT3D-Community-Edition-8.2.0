@@ -105,7 +105,7 @@
                                         </time>
                                     @endif
                                 </td>
-                                {{--<td>
+                                <td>
                                     @if ($user->last_action === null)
                                         N/A
                                     @else
@@ -114,10 +114,14 @@
                                             datetime="{{ $invite->receiver->last_action }}"
                                             title="{{ $invite->receiver->last_action }}"
                                         >
-                                            {{ $invite->receiver->last_action->diffForHumans() }}
+                                        try {
+                                            echo $invite->receiver->last_action->diffForHumans();
+                                        } catch (\Exception $e) {
+                                            echo 'Error al calcular la diferencia de tiempo.';
+                                        }
                                         </time>
                                     @endif
-                                </td> --}}
+                                </td>
                                 <td>
                                     <menu class="data-table__actions">
                                         <li class="data-table__action">
