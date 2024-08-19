@@ -10,10 +10,10 @@
                 <!--class="{{ config('other.font-awesome') }} fa-tv-retro footer__icon"b-->
                 <!--style="font-size: 90px"b-->
             </i>
-                <img src="/img/logo.png" alt="Lat-Team" class="footer__icon" style="width: 240px;">
+                <img src="/img/logo.png" alt="Lat-Team" class="footer__icon" style="width: 250px;">
                 </section>
                 <section>
-                <a title="Apoya a Lat-Team" href="https://lat-team.com/pages/8"><img src="https://lat-team.com/img/dona.png" alt="Dona por Favor" class="footer__icon" style="width: 150px;">    
+                <a title="Apoya a Lat-Team" href="https://lat-team.com/pages/8"><img src="https://lat-team.com/img/dona.png" alt="Dona por Favor" class="footer__icon" style="width: 250px;">    
             </p>
         </section>
         <section class="footer__section">
