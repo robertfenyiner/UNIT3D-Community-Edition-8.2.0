@@ -4,7 +4,7 @@
             <!--<i class="fal fa-tv-retro"></i>-->
             <!--<span class="top-nav__site-logo">{{ \config('other.title') }}</span>-->
 
-            <a href="{{ route('home.index') }}" style="height: 32px;"><img src="{{ url('/img/ltsmall.png') }}" style="height: 32px;>
+            <a href="{{ route('home.index') }}" style="height: 32px;"><img src="{{ url('/img/ltsmall.png') }}" style="height: 32px;">
         </a>
         <livewire:quick-search-dropdown />
     </div>
