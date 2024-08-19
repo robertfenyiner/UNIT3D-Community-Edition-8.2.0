@@ -28,5 +28,5 @@ return [
     'users-online'            => 'Usuarios en liña',
     'check-news'              => 'Novas (verifique a diario)',
     'new-news'                => 'Novas novas',
-    'new-torrents'            => 'Novos torrentes',
+    'new-torrents'            => 'Novos torrents',
 ];

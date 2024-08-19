@@ -123,7 +123,7 @@ return [
     'pages'                => 'Páxinas',
     'password'             => 'Contrasinal',
     'patron'               => 'Convértete en patrón',
-    'pending-torrents'     => 'Torrentes pendentes',
+    'pending-torrents'     => 'Torrents pendentes',
     'personal'             => 'Persoal',
     'plural-suffix'        => 's',
     'port'                 => 'Porto',
