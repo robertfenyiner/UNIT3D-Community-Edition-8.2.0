@@ -105,13 +105,19 @@
                                         </time>
                                     @endif
                                 </td>
-                                <!--<td>
+                                {{--<td>
                                     @if ($user->last_action === null)
                                         N/A
                                     @else
-                                        N/A
+                                        <time
+                                            class="{{ $invite->receiver->last_action }}"
+                                            datetime="{{ $invite->receiver->last_action }}"
+                                            title="{{ $invite->receiver->last_action }}"
+                                        >
+                                            {{ $invite->receiver->last_action->diffForHumans() }}
+                                        </time>
                                     @endif
-                                </td>-->
+                                </td> --}}
                                 <td>
                                     <menu class="data-table__actions">
                                         <li class="data-table__action">
