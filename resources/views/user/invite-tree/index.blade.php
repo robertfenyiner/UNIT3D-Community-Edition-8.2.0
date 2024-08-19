@@ -114,11 +114,7 @@
                                             datetime="{{ $invite->receiver->last_action }}"
                                             title="{{ $invite->receiver->last_action }}"
                                         >
-                                        try {
-                                            echo $invite->receiver->last_action->diffForHumans();
-                                        } catch (\Exception $e) {
-                                            echo 'N/A';
-                                        }
+                                            {{ $invite->receiver->last_action->diffForHumans() }}
                                         </time>
                                     @endif
                                 </td>
