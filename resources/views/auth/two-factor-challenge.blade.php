@@ -122,10 +122,6 @@
                         @hiddencaptcha
                     @endif
 
-                    <div class="auth-form__button-container">                 
-                        <button class="auth-form__primary-button">LOGIN</button>
-                    </div>
-
                     <div class="auth-form__button-container">
                         @if (Session::has('errors'))
                             <ul class="auth-form__errors">
@@ -134,6 +130,10 @@
                                 @endforeach
                             </ul>
                         @endif
+                    </div>
+
+                    <div class="auth-form__button-container">                 
+                        <button class="auth-form__primary-button">LOGIN</button>
                     </div>
                     
                     <div class="discord-div">
