@@ -37,7 +37,7 @@
             @foreach ($tvs as $key => $tv)
                 <a
                     target="_blank"
-                    href="{{ route('torrents.similar', ['category_id' => $media->category_id, 'tmdb' => $tv->id]) }}"
+                    href="{{ route('torrents.similar', ['category_id' => 2, 'tmdb' => $tv->id]) }}"
                     class="@if ($loop->iteration == 1) media3 @elseif ($loop->iteration == 2) media4 @else media5 @endif"
                     style="
                         background-image: url('{{ \tmdb_image('back_small', $tv->backdrop) }}');
@@ -49,6 +49,9 @@
                     <span style="padding-left: 6px">TV</span>
                     <div class="media__title">
                         {{ $tv->name }} ({{ substr($tv->first_air_date ?? '', 0, 4) ?? '' }})
+                    </div>
+                    <div class="media__title">
+                        {{ $tv}}
                     </div>
                 </a>
             @endforeach
