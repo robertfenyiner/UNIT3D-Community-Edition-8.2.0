@@ -45,7 +45,7 @@
                         <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam"/>
                         <!--<span class="auth-form__site-logo">{{ \config('other.title') }}</span>-->
                     </a>
-                    <ul class="auth-form__important-infos">
+                    <ul class="auth-form__important-infos" style="text-align: center;">
                         <li class="auth-form__important-info" x-show="!recovery">
                             {{ __('auth.enter-totp') }}
                         </li>

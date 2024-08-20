@@ -91,7 +91,6 @@
                     @hiddencaptcha
                 @endif
                 <div class="auth-form__button-container">
-                    <button class="auth-form__primary-button">LOGIN</button>
 
                     @if (Session::has('errors'))
                         <ul class="auth-form__errors">
@@ -100,7 +99,11 @@
                             @endforeach
                         </ul>
                     @endif
-                    </div>
+                    
+                    <ul>
+                        <button class="auth-form__primary-button">LOGIN</button>
+                    </ul>
+                </div>
             </form>
             <footer class="auth-form__footer">
                 @if (!config('other.invite-only'))
