@@ -90,8 +90,12 @@
                 @if (config('captcha.enabled'))
                     @hiddencaptcha
                 @endif
-                <div class="auth-form__button-container">
+                
+                <div class="auth-form__button-container">                    
+                    <button class="auth-form__primary-button">LOGIN</button>
+                </div>
 
+                <div class="auth-form__button-container">
                     @if (Session::has('errors'))
                         <ul class="auth-form__errors">
                             @foreach ($errors->all() as $error)
@@ -99,11 +103,6 @@
                             @endforeach
                         </ul>
                     @endif
-                </div>
-                <div class="auth-form__button-container">                    
-                    <ul>
-                        <button class="auth-form__primary-button">LOGIN</button>
-                    </ul>
                 </div>
             </form>
             <footer class="auth-form__footer">
