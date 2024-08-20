@@ -46,7 +46,7 @@
                         background-size: cover;
                     "
                 >
-                    <span style="padding-left: 6px">TV</span>
+                    <span style="padding-left: 6px">HOLAHOLA</span>
                     <div class="media__title">
                         {{ $tv }}
                     </div>
