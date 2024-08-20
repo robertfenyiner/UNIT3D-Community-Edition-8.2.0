@@ -99,7 +99,8 @@
                             @endforeach
                         </ul>
                     @endif
-                    
+                </div>
+                <div class="auth-form__button-container">                    
                     <ul>
                         <button class="auth-form__primary-button">LOGIN</button>
                     </ul>
