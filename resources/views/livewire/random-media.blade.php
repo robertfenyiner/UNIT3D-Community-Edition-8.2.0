@@ -27,7 +27,7 @@
                         background-size: cover;
                     "
                 >
-                    <span style="padding-left: 6px">MOVIE</span>
+                    <span style="padding-left: 6px">Movie</span>
                     <div class="media__title">
                         {{ $movie->title }} ({{ substr($movie->release_date ?? '', 0, 4) ?? '' }})
                     </div>
@@ -65,7 +65,7 @@
                         background-size: cover;
                     "
                 >
-                    <span style="padding-left: 6px">MOVIE</span>
+                    <span style="padding-left: 6px">Movie</span>
                     <div class="media__title">
                         {{ $movie->title }} ({{ substr($movie->release_date ?? '', 0, 4) ?? '' }})
                     </div>
