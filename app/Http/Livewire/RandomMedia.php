@@ -19,6 +19,7 @@ namespace App\Http\Livewire;
 use App\Models\Tv;
 use App\Models\Movie;
 use App\Models\Torrent;
+use App\Models\Category;
 use Illuminate\Support\Facades\Redis;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
