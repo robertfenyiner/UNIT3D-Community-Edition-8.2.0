@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="auth-form__button-container">                 
-                        <button class="auth-form__primary-button">LOGIN</button>
+                        <button class="auth-form__primary-button">Login</button>
                     </div>
                     
                     <div class="discord-div">

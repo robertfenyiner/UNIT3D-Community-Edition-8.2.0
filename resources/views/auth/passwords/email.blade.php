@@ -78,20 +78,23 @@
                     @endif
 
                     <div class="auth-form__button-container">
-                        <button class="auth-form__primary-button">Reset</button>
-                        <!--{{ __('auth.password-reset') }}-->
-                    @if (Session::has('errors') || Session::has('status'))
-                        <ul class="auth-form__errors">
-                            @foreach ($errors->all() as $error)
-                                <li class="auth-form__error">{{ $error }}</li>
-                            @endforeach
+                        @if (Session::has('errors') || Session::has('status'))
+                            <ul class="auth-form__errors">
+                                @foreach ($errors->all() as $error)
+                                    <li class="auth-form__error">{{ $error }}</li>
+                                @endforeach
 
-                            @if (Session::has('status'))
-                                <li class="auth-form__error">{{ Session::get('status') }}</li>
-                            @endif
-                        </ul>
-                    @endif
+                                @if (Session::has('status'))
+                                    <li class="auth-form__error">{{ Session::get('status') }}</li>
+                                @endif
+                            </ul>
+                        @endif
                     </div>
+                    
+                    <div class="auth-form__button-container">                    
+                        <button class="auth-form__primary-button">Reset</button>
+                    </div>
+                    
                     </a>
                     <div class="discord-div">
                         <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
