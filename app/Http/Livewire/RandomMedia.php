@@ -81,7 +81,7 @@ class RandomMedia extends Component
             ->selectSub(
                 Category::query()
                     ->select('name')
-                    ->whereColumn('category.id', '=', 'torrent.id')
+                    ->whereColumn('category_id', '=', 'torrent.id')
                     ->limit(1),
                 'category_name'
             )
