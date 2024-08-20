@@ -77,6 +77,13 @@ class RandomMedia extends Component
                     ->limit(1),
                 'category_id'
             )
+            ->selectSub(
+                Category::query()
+                    ->select('name')
+                    ->whereColumn('category.id', '=', 'torrent.id')
+                    ->limit(1),
+                'category_name'
+            )
             ->whereIn('id', $tvIds)
             ->get();
     }
