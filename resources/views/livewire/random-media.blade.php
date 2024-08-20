@@ -48,10 +48,7 @@
                 >
                     <span style="padding-left: 6px">TV</span>
                     <div class="media__title">
-                        {{ $tv->name }} ({{ substr($tv->first_air_date ?? '', 0, 4) ?? '' }})
-                    </div>
-                    <div class="media__title">
-                        {{ $tv}}
+                        {{ $tv }}
                     </div>
                 </a>
             @endforeach
