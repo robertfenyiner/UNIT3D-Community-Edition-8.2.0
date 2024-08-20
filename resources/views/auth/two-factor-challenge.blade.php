@@ -122,17 +122,20 @@
                         @hiddencaptcha
                     @endif
 
-                    <div class="auth-form__button-container">
-                    <button class="auth-form__primary-button"><!--{{ __('auth.login') }}-->Login</button>
-
-                    @if (Session::has('errors'))
-                        <ul class="auth-form__errors">
-                            @foreach ($errors->all() as $error)
-                                <li class="auth-form__error">{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    <div class="auth-form__button-container">                 
+                        <button class="auth-form__primary-button">LOGIN</button>
                     </div>
+
+                    <div class="auth-form__button-container">
+                        @if (Session::has('errors'))
+                            <ul class="auth-form__errors">
+                                @foreach ($errors->all() as $error)
+                                    <li class="auth-form__error">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                    
                     <div class="discord-div">
                     <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
                         <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
