@@ -67,7 +67,7 @@ class RandomMedia extends Component
         $tvIds = Redis::connection('cache')->command('SRANDMEMBER', [$cacheKey, 3]);
 
         return Tv::query()
-            ->select(['id', 'backdrop', 'name', 'first_air_date'])
+            ->select(['id', 'backdrop', 'name', 'first_air_date', 'category_id'])
             ->whereIn('id', $tvIds)
             ->get();
     }
