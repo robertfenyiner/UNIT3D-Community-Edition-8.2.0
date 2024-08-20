@@ -34,7 +34,7 @@
                     @csrf
                     <a class="auth-form__branding" href="{{ route('home.index') }}">
                         <i class="fal fa-tv-retro"></i>
-                        <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam" style="height: 350px;"/>
+                        <img class="auth-form__site-logo-lateam" src="{{ url('/img/logo.png') }}" alt="LaTeam"/>
                         <!--<span class="auth-form__site-logo">{{ \config('other.title') }}</span>-->
                     </a>
                     @if (Session::has('warning') || Session::has('success') || Session::has('info'))
