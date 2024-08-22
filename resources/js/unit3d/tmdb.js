@@ -5,7 +5,7 @@ theMovieDb.common = {
     base_uri: 'https://api.themoviedb.org/3/',
     images_uri: 'https://image.tmdb.org/t/p/',
     timeout: 5000,
-    language: 'es_ES',
+    language: 'es_MX',
     generateQuery: function (options) {
         'use strict';
         let myOptions, query, option;
