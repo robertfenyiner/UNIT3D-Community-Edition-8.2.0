@@ -301,6 +301,8 @@ class TV
      */
     public function __construct(int $id)
     {
+        echo config('api-keys.tmdb');
+        echo config('app.meta_locale');
         $this->data = Http::acceptJson()
             ->withUrlParameters(['id' => $id])
             ->get('https://api.TheMovieDB.org/3/tv/{id}', [
