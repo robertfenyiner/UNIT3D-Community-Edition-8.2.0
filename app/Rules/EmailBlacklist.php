@@ -35,7 +35,7 @@ class EmailBlacklist implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         // Load blacklisted domains
-        $this->domains = cache()->get(config('email-blacklist.cache-key'));
+        $this->domains = cache()->get(config('email-blacklist.cache-key'), []);
         $this->appendCustomDomains();
 
         // Extract domain from supplied email address
