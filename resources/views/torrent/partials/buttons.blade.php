@@ -19,16 +19,19 @@
                     {{ __('common.download') }}
                 </a>
             @endif
-        @else
-            <a
-                href="magnet:?dn={{ $torrent->name }}&xt=urn:btih:{{ bin2hex($torrent->info_hash) }}&as={{ route('torrent.download.rsskey', ['id' => $torrent->id, 'rsskey' => $user->rsskey]) }}&tr={{ route('announce', ['passkey' => $user->passkey]) }}&xl={{ $torrent->size }}"
-                class="form__button form__button--filled form__button--centered"
-            >
-                <i class="{{ config('other.font-awesome') }} fa-magnet"></i>
-                {{ __('common.magnet') }}
-            </a>
         @endif
     </li>
+    <li class="form__group form__group--short-horizontal">
+        <a
+            href="magnet:?dn={{ $torrent->name }}&xt=urn:btih:{{ bin2hex($torrent->info_hash) }}&as={{ route('torrent.download.rsskey', ['id' => $torrent->id, 'rsskey' => $user->rsskey]) }}&tr={{ route('announce', ['passkey' => $user->passkey]) }}&xl={{ $torrent->size }}"
+            class="form__button form__button--filled form__button--centered"
+        >
+            <i class="{{ config('other.font-awesome') }} fa-magnet"></i>
+            {{ __('common.magnet') }}
+        </a>
+    </li>
+        
+    
     @if ($fileExists)
         @if ($torrent->free !== 100 && config('other.freeleech') == false && ! $personal_freeleech && $user->group->is_freeleech == 0 && ! $torrent->freeleechToken_exists)
             <li class="form__group form__group--short-horizontal">
