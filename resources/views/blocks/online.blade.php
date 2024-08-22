@@ -23,6 +23,9 @@
                 </li>
             @endforeach
         </ul>
+                                
+        <!-- Sección de grupos eliminada para que solo salgan los nombres Online -->
+        <!--                                   
         <hr />
         <ul style="column-width: 200px; column-gap: 1rem; list-style-type: none; padding: 0">
             @foreach ($groups as $group)
@@ -38,5 +41,6 @@
                 </span>
             @endforeach
         </ul>
+        -->                                
     </div>
 </section>
