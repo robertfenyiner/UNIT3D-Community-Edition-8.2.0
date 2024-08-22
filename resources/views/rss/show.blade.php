@@ -10,7 +10,7 @@
         <title>{{ config('other.title') }}: {{ $rss->name }}</title>
         <link>{{ config('app.url') }}</link>
         <description>
-            {{ __('This feed contains your secure rsskey, please do not share with anyone.') }}
+            {!! __('This feed contains your secure rsskey, please do not share with anyone.') !!}
         </description>
         <atom:link href="{{ route('rss.show.rsskey', ['id' => $rss->id, 'rsskey' => $user->rsskey]) }}"
                    type="application/rss+xml" rel="self"></atom:link>
@@ -19,7 +19,7 @@
         <lastBuildDate>{{ now()->toRssString() }}</lastBuildDate>
         <ttl>5</ttl>
         @if($torrents)
-        @foreach($torrents as $data)
+            @foreach($torrents as $data)
             	@php
                         $meta = match (true) {
                             $data->category->tv_meta => App\Models\Tv::query()
@@ -30,58 +30,59 @@
                                 ->find($data->tmdb ?? 0),                            
                             default => null,
                         };
-                            @endphp
-                        <item>
-                        <title>{{ $data->name }}</title>                    
-                            <category>{{ $data->category->name }}</category>
-                            <type>{{ $data->type->name }}</type>
-                        <resolution>{{ $data->resolution->name ?? 'No Res' }}</resolution>
-                        <size>{{ $data->getSize() }}</size>
-                        <imdb>
-                        @if (($data->category->movie_meta || $data->category->tv_meta) && $data->imdb != 0)
-                            https://anon.to?http://www.imdb.com/title/tt{{ $data->imdb }};                        
-                                    @endif
-                        </imdb>
-                        <poster>
-                            @php
-                                $poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
-                                if ($data->category->movie_meta && $data->tmdb != 0)
-                                    $poster = tmdb_image('poster_big', $meta->poster);
-                                if ($data->category->tv_meta && $data->tmdb != 0) 
-                                                    $poster = tmdb_image('poster_big', $meta->poster); 
-                                if (!$data->category->movie_meta && !$data->category->tv_meta)
-                                    if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
-                                        $poster = url('files/img/torrent-cover_' . $data->id . '.jpg');
-                            @endphp
-                            {{$poster}}
-                        </poster>
-                        <tmdb>
-                            @if ($data->category->movie_meta && $data->tmdb != 0)
-                                https://anon.to?https://www.themoviedb.org/movie/{{ $data->tmdb }}
-                                        @elseif ($data->category->tv_meta && $data->tmdb != 0)
-                                https://anon.to?https://www.themoviedb.org/tv/{{ $data->tmdb }}                        	
-                                        @endif
-                        </tmdb>
-		                <link>{{ route('torrents.show', ['id' => $data->id ]) }}</link>                    
+                 @endphp
+                <item>
+                    <title>{{ $data->name }}</title>                    
+                    <category>{{ $data->category->name }}</category>
+                    <type>{{ $data->type->name }}</type>
+		    <resolution>{{ $data->resolution->name ?? 'No Res' }}</resolution>
+	   	    <size>{{ $data->getSize() }}</size>
+		    <imdb>
+			@if (($data->category->movie_meta || $data->category->tv_meta) && $data->imdb != 0)
+				https://anon.to?http://www.imdb.com/title/tt{{ $data->imdb }};                        
+                        @endif
+		     </imdb>
+                     <poster>
+			@php
+				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
+				if ($data->category->movie_meta && $data->tmdb != 0)
+					$poster = tmdb_image('poster_big', $meta->poster);
+				if ($data->category->tv_meta && $data->tmdb != 0) 
+                                	$poster = tmdb_image('poster_big', $meta->poster); 
+				if (!$data->category->movie_meta && !$data->category->tv_meta)
+					if(file_exists(public_path().'/files/img/torrent-cover_'.$data->id.'.jpg'))
+						$poster = url('files/img/torrent-cover_' . $data->id . '.jpg');
+
+			@endphp
+			{{$poster}}
+		     </poster>
+		     <tmdb>
+				@if ($data->category->movie_meta && $data->tmdb != 0)
+					https://anon.to?https://www.themoviedb.org/movie/{{ $data->tmdb }}
+                        	@elseif ($data->category->tv_meta && $data->tmdb != 0)
+					https://anon.to?https://www.themoviedb.org/tv/{{ $data->tmdb }}                        	
+                        	@endif
+		    </tmdb>
+		    <link>{{ route('torrents.show', ['id' => $data->id ]) }}</link>                    
                     <guid>{{ $data->id }}</guid>
                     <description>
-                            {{$poster}} 
-                            Categoria: {{ $data->category->name }}		    
-                            Tipo: {{ $data->type->name }}
-                            Resolucion: {{ $data->resolution->name ?? 'No Res' }}
-                            Tama&#328;o: {{ $data->getSize() }}
-                            @if (($data->category->movie_meta || $data->category->tv_meta)  && $data->imdb != 0)
-                                [![](https://icons.iconarchive.com/icons/danleech/simple/48/imdb-icon.png)](http://www.imdb.com/title/tt{{ $data->imdb }})
-                            @endif
-                            @if ($data->category->movie_meta && $data->tmdb != 0)
-                            [![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/movie/{{ $data->tmdb }})
-                                    @elseif ($data->category->tv_meta && $data->tmdb != 0)
-                            [![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/tv/{{ $data->tmdb }}) 
-                        @endif
-                    </description>
+                    	{{$poster}} 
+		    	Categoria: {{ $data->category->name }}		    
+		    	Tipo: {{ $data->type->name }}
+		    	Resolucion: {{ $data->resolution->name ?? 'No Res' }}
+		    	Tama&#328;o: {{ $data->getSize() }}
+ 		    	@if (($data->category->movie_meta || $data->category->tv_meta)  && $data->imdb != 0)
+		    		[![](https://icons.iconarchive.com/icons/danleech/simple/48/imdb-icon.png)](http://www.imdb.com/title/tt{{ $data->imdb }})
+ 		     	@endif
+		     	@if ($data->category->movie_meta && $data->tmdb != 0)
+				[![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/movie/{{ $data->tmdb }})
+                        @elseif ($data->category->tv_meta && $data->tmdb != 0)
+				[![](https://i.ibb.co/q0LP1H6/tmdbsmall.png)](https://www.themoviedb.org/tv/{{ $data->tmdb }}) 
+			@endif
+		   </description>
                     <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">
-                    @if(!$data->anon && $data->user)
-                    {{ __('torrent.uploaded-by') }} {{ $data->user->username }}
+                        @if(!$data->anon && $data->user)
+                            {{ __('torrent.uploaded-by') }} {{ $data->user->username }}
                         @else
                             {{ __('common.anonymous') }} {{ __('torrent.uploader') }}
                         @endif
