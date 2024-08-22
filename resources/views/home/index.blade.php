@@ -13,7 +13,7 @@
 
     @include('blocks.featured')
     @livewire('random-media')
-    @include('blocks.poll')
+    {{--@include('blocks.poll')--}}
     @livewire('top-torrents')
     @livewire('top-users')
     @include('blocks.latest_topics')
