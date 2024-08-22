@@ -301,8 +301,6 @@ class TV
      */
     public function __construct(int $id)
     {
-        $metaLocale = config('app.meta_locale');
-        echo "<script>console.log('meta_locale: " . addslashes($metaLocale) . "');</script>";
         $this->data = Http::acceptJson()
             ->withUrlParameters(['id' => $id])
             ->get('https://api.TheMovieDB.org/3/tv/{id}', [
