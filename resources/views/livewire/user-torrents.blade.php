@@ -488,38 +488,28 @@
                                 </span>
                             </td>
                             <td class="user-torrents__ratio">
-                                @php($ratio = $history->actual_ratio < 1000 ? \number_format($history->actual_ratio, 2) : INF)
-                                <span
-                                    @if ($ratio < 1)
-                                        class="ratio-0{{ \floor($ratio * 10) }}"
-                                    @elseif ($ratio < 2)
-                                        class="ratio-10"
-                                    @elseif ($ratio < 5)
-                                        class="ratio-20"
-                                    @elseif ($ratio <= INF)
-                                        class="ratio-50"
-                                    @endif
-                                    title="Actual ratio: {{ $history->actual_ratio }}"
-                                >
-                                    {{ $ratio }}
-                                </span>
-                                <br />
-                                @php($ratio = $history->ratio < 1000 ? \number_format($history->ratio, 2) : INF)
-                                <span
-                                    @if ($ratio < 1)
-                                        class="ratio-0{{ \floor($ratio * 10) }}"
-                                    @elseif ($ratio < 2)
-                                        class="ratio-10"
-                                    @elseif ($ratio < 5)
-                                        class="ratio-20"
-                                    @elseif ($ratio <= INF)
-                                        class="ratio-50"
-                                    @endif
-                                    title="Credited ratio: {{ $history->ratio }}"
-                                >
-                                    {{ $ratio }}
-                                </span>
-                            </td>
+                            @php
+                                $actual_ratio = $history->actual_ratio;
+                                $formatted_actual_ratio = $actual_ratio < 1000 ? \number_format($actual_ratio, 2) : INF;
+                                $actual_ratio_class = $formatted_actual_ratio < 1 
+                                    ? 'ratio-0' . \floor($formatted_actual_ratio * 10)
+                                    : ($formatted_actual_ratio < 2 ? 'ratio-10' : ($formatted_actual_ratio < 5 ? 'ratio-20' : 'ratio-50'));
+                            @endphp
+                            <span class="{{ $actual_ratio_class }}" title="Actual ratio: {{ $actual_ratio }}">
+                                {{ $formatted_actual_ratio }}
+                            </span>
+                            <br />
+                            @php
+                                $credited_ratio = $history->ratio;
+                                $formatted_credited_ratio = $credited_ratio < 1000 ? \number_format($credited_ratio, 2) : INF;
+                                $credited_ratio_class = $formatted_credited_ratio < 1 
+                                    ? 'ratio-0' . \floor($formatted_credited_ratio * 10)
+                                    : ($formatted_credited_ratio < 2 ? 'ratio-10' : ($formatted_credited_ratio < 5 ? 'ratio-20' : 'ratio-50'));
+                            @endphp
+                            <span class="{{ $credited_ratio_class }}" title="Credited ratio: {{ $credited_ratio }}">
+                                {{ $formatted_credited_ratio }}
+                            </span>
+                        </td>
                             @if ($showMorePrecision)
                                 <td class="user-torrents__leechtime">
                                     @if ($history->leechtime === null)
