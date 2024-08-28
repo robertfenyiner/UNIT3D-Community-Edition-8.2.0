@@ -357,6 +357,7 @@ class TorrentController extends Controller
                         $category->no_meta    => 'no',
                         default               => 'no',
                     },
+                    'id' => $category->id,
                 ]])
                 ->toArray(),
             'types'        => Type::orderBy('position')->get(),

@@ -89,7 +89,7 @@
                         name="nfo"
                     />
                 </p>
-                <p class="form__group" x-show="cats[cat].type === 'no'">
+                <p class="form__group" x-show="cats[cat].type === 'no' && cats[cat].id !== 3">
                     <label for="torrent-cover" class="form__label">
                         Cover {{ __('torrent.file') }} ({{ __('torrent.optional') }})
                     </label>
@@ -97,6 +97,19 @@
                         id="torrent-cover"
                         class="upload-form-file form__file"
                         type="file"
+                        accept=".jpg, .jpeg"
+                        name="torrent-cover"
+                    />
+                </p>
+                <p class="form__group" x-show="cats[cat].type === 'no' && cats[cat].id === 3">
+                    <label for="torrent-cover" class="form__label">
+                        Cover {{ __('torrent.file') }} (Obligatorio)
+                    </label>
+                    <input
+                        id="torrent-cover"
+                        class="upload-form-file form__file"
+                        type="file"
+                        required
                         accept=".jpg, .jpeg"
                         name="torrent-cover"
                     />
