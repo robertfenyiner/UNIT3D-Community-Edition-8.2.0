@@ -92,7 +92,7 @@
                 <p class="form__group" x-show="cats[cat].type === 'no'">
                     <label for="torrent-cover" class="form__label">
                         Cover {{ __('torrent.file') }}
-                        <span x-text="cats[cat].id === 3 ? ' (Obligatorio)' : ' ({{ torrent.optional }})'"></span>
+                        <span x-text="cats[cat].id === 3 ? ' (Obligatorio)' : ' ({{ __('torrent.optional') }})'"></span>
                     </label>
                     <input
                         id="torrent-cover"
