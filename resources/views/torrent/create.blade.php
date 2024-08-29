@@ -92,13 +92,13 @@
                 <p class="form__group" x-show="cats[cat].type === 'no'">
                     <label for="torrent-cover" class="form__label">
                         Cover {{ __('torrent.file') }}
-                        <span x-text="cats[cat].id === 3 ? ' (Obligatorio)' : ' ({{ __('torrent.optional') }})'"></span>
+                        <span x-text="[3, 12, 18, 11, 24].includes(cats[cat].id) ? ' (Obligatorio)' : ' ({{ __('torrent.optional') }})'"></span>
                     </label>
                     <input
                         id="torrent-cover"
                         class="upload-form-file form__file"
                         type="file"
-                        :required="cats[cat].id === 3"
+                        :required="[3, 12, 18, 11, 24].includes(cats[cat].id)"
                         accept=".jpg, .jpeg"
                         name="torrent-cover"
                     />
