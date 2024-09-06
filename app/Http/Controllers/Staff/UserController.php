@@ -98,6 +98,7 @@ class UserController extends Controller
             'can_invite'  => $request->filled('can_invite') ? $request->boolean('can_invite') : null,
             'can_request' => $request->filled('can_request') ? $request->boolean('can_request') : null,
             'can_upload'  => $request->filled('can_upload') ? $request->boolean('can_upload') : null,
+            'can_download'  => $request->filled('can_download') ? $request->boolean('can_download') : null,
         ]);
 
         cache()->forget('user:'.$user->passkey);
