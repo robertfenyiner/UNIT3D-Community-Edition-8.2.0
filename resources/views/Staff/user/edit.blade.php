@@ -352,7 +352,7 @@
                         id="override_can_download"
                         class="form__checkbox"
                         type="checkbox"
-                        x-bind:checked="0"
+                        x-bind:checked='0'
                         x-model="override_can_download"
                     />
                     <label for="override_can_download">Override Group Can Download</label>
