@@ -195,6 +195,7 @@
                     override_can_invite: {{ Js::from($user->can_invite !== null) }},
                     override_can_request: {{ Js::from($user->can_request !== null) }},
                     override_can_upload: {{ Js::from($user->can_upload !== null) }},
+                    override_can_download: {{ Js::from($user->can_download !== null) }},
                 }"
             >
                 @csrf
@@ -344,6 +345,35 @@
                             @checked($user->can_upload)
                         />
                         <label for="can_upload">{{ __('user.can-upload') }}?</label>
+                    </fieldset>
+                </div>
+                <p class="form__group">
+                    <input
+                        id="override_can_download"
+                        class="form__checkbox"
+                        type="checkbox"
+                        x-bind:checked="override_can_download"
+                        x-model="override_can_download"
+                    />
+                    <label for="override_can_download">Override Group Can Download</label>
+                </p>
+                <div class="form__group" x-show="override_can_download" x-cloak>
+                    <fieldset class="form__fieldset">
+                        <input
+                            type="hidden"
+                            name="can_download"
+                            x-bind:value="override_can_download ? '0' : ''"
+                        />
+                        <input
+                            type="checkbox"
+                            class="form__checkbox"
+                            id="can_download"
+                            name="can_download"
+                            value="1"
+                            x-bind:checked="override_can_download && $el.checked"
+                            @checked($user->can_download)
+                        />
+                        <label for="can_download">{{ __('user.can-download') }}?</label>
                     </fieldset>
                 </div>
                 <p class="form__group">
